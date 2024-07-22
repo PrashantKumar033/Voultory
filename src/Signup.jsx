@@ -1,9 +1,140 @@
+// // src/components/Signup.jsx
+// import React from 'react';
+// import styled from 'styled-components';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faUser, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const Input = styled.input`
+//   width: 100%;
+//   padding: 10px;
+//   margin: 10px 0;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   font-size: 16px;
+// `;
+
+// const Button = styled.button`
+//   width: 100%;
+//   padding: 10px;
+//   background-color: #0073e6;
+//   color: #fff;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 16px;
+//   cursor: pointer;
+//   margin-top: 10px;
+
+//   &:hover {
+//     background-color: #005bb5;
+//   }
+// `;
+
+// const Signup = () => {
+//   const [value, setValue] = React.useState({
+//     name: '',
+//     email: '',
+//     password: '',
+//   });
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setValue((prevState) => ({
+//       ...prevState,
+//       [name]: value,
+//     }));
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log('Signup Details:', value);
+//   };
+
+//   return (
+//     <Container>
+//       <Header>
+//         <Icon>
+//           <FontAwesomeIcon icon={faUser} />
+//         </Icon>
+//         <HeaderButtons>
+//           <HeaderButton>
+//             <FontAwesomeIcon icon={faSignInAlt} />
+//             Login
+//           </HeaderButton>
+//           <HeaderButton>
+//             <FontAwesomeIcon icon={faUserPlus} />
+//             Sign Up
+//           </HeaderButton>
+//         </HeaderButtons>
+//       </Header>
+//       <SignupBox>
+//         <Title>Sign Up</Title>
+//         <form onSubmit={handleSubmit}>
+//           <Input
+//             type="text"
+//             name="name"
+//             value={value.name}
+//             placeholder="Name"
+//             onChange={handleChange}
+//             required
+//           />
+//           <Input
+//             type="email"
+//             name="email"
+//             value={value.email}
+//             placeholder="Email"
+//             onChange={handleChange}
+//             required
+//           />
+//           <Input
+//             type="password"
+//             name="password"
+//             value={value.password}
+//             placeholder="Password"
+//             onChange={handleChange}
+//             required
+//           />
+//           <Button type="submit">Sign Up</Button>
+//         </form>
+//       </SignupBox>
+//     </Container>
+//   );
+// };
+
+// export default Signup;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // src/components/Signup.jsx
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
+// Styled-components for styling
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,6 +146,7 @@ const Container = styled.div`
   background-image: url('./background1.jpg');
   background-size:cover;
 `;
+
 
 const SignupBox = styled.div`
   background-color: #fff;
@@ -46,6 +178,7 @@ const Icon = styled.div`
   font-size: 24px;
   color: white;
   padding-left:25px;
+  padding-right:150px;
 `;
 
 const HeaderButtons = styled.div`
@@ -55,7 +188,7 @@ const HeaderButtons = styled.div`
   gap: 20px;
 `;
 
-const HeaderButton = styled.button`
+const HeaderButton = styled(Link)`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -67,6 +200,7 @@ const HeaderButton = styled.button`
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
 
   &:hover {
     background-color: white;
@@ -75,8 +209,8 @@ const HeaderButton = styled.button`
 `;
 
 const Title = styled.h1`
-  margin-top: 25px; /* Offset for the header */
-  margin-bottom: 25px;
+  margin-top: 1px; /* Offset for the header */
+  margin-bottom: 20px;
   color: #0073e6;
 `;
 
@@ -131,12 +265,13 @@ const Signup = () => {
         <Icon>
           <FontAwesomeIcon icon={faUser} />
         </Icon>
+        <h1>Welcome to Voultory</h1>
         <HeaderButtons>
-          <HeaderButton>
+          <HeaderButton to="/">
             <FontAwesomeIcon icon={faSignInAlt} />
             Login
           </HeaderButton>
-          <HeaderButton>
+          <HeaderButton to="/signup">
             <FontAwesomeIcon icon={faUserPlus} />
             Sign Up
           </HeaderButton>
@@ -177,3 +312,4 @@ const Signup = () => {
 };
 
 export default Signup;
+

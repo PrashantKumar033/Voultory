@@ -1,8 +1,71 @@
+// // src/components/Login.jsx
+// import React from 'react';
+// import styled from 'styled-components';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faUser, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
+// // Styled-components for styling
+
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log('Login Details:', value);
+//   };
+
+//   return (
+//     <Container>
+//       <Header>
+//         <Icon>
+//           <FontAwesomeIcon icon={faUser} />
+//         </Icon>
+//         <HeaderButtons>
+//           <HeaderButton>
+//             <FontAwesomeIcon icon={faSignInAlt} />
+//             Login
+//           </HeaderButton>
+//           <HeaderButton>
+//             <FontAwesomeIcon icon={faUserPlus} />
+//             Sign Up
+//           </HeaderButton>
+//         </HeaderButtons>
+//       </Header>
+//       <LoginBox>
+//         <Title>Login</Title>
+//         <form onSubmit={handleSubmit}>
+//           <Input
+//             type="email"
+//             name="email"
+//             value={value.email}
+//             placeholder="Email"
+//             onChange={handleChange}
+//             required
+//           />
+//           <Input
+//             type="password"
+//             name="password"
+//             value={value.password}
+//             placeholder="Password"
+//             onChange={handleChange}
+//             required
+//           />
+//           <Button type="submit">Login</Button>
+//         </form>
+//       </LoginBox>
+//     </Container>
+//   );
+// };
+
+// export default Login;
+
+
+
+
 // src/components/Login.jsx
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 // Styled-components for styling
 const Container = styled.div`
@@ -47,8 +110,9 @@ const Header = styled.div`
 
 const Icon = styled.div`
   font-size: 24px;
-  padding-left:20px;
   color: white;
+  padding-left:25px;
+  padding-right:150px;
 `;
 
 const HeaderButtons = styled.div`
@@ -58,7 +122,7 @@ const HeaderButtons = styled.div`
   gap: 20px;
 `;
 
-const HeaderButton = styled.button`
+const HeaderButton = styled(Link)`
   display: flex;
   align-items: center;
   gap: 5px;
@@ -70,6 +134,7 @@ const HeaderButton = styled.button`
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
 
   &:hover {
     background-color: white;
@@ -122,6 +187,7 @@ const Login = () => {
     }));
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login Details:', value);
@@ -133,12 +199,13 @@ const Login = () => {
         <Icon>
           <FontAwesomeIcon icon={faUser} />
         </Icon>
+        <h1>Welcome to Voultory</h1>
         <HeaderButtons>
-          <HeaderButton>
+          <HeaderButton to="/">
             <FontAwesomeIcon icon={faSignInAlt} />
             Login
           </HeaderButton>
-          <HeaderButton>
+          <HeaderButton to="/signup">
             <FontAwesomeIcon icon={faUserPlus} />
             Sign Up
           </HeaderButton>

@@ -1,19 +1,27 @@
 // src/App.jsx
-// src/main.jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from './Login';
 import Signup from './Signup';
-// import Login from './Login';
 
 const App = () => {
   return (
-    <div>
-      <Signup />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
+
+
+
+
+
+
 
 
 
