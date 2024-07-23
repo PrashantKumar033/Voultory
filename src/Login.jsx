@@ -78,20 +78,18 @@ const Container = styled.div`
   position: relative;
   background-image: url('./background1.jpg');
   background-size:cover;
+  
 `;
 
 const LoginBox = styled.div`
   background-color: #fff;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backgound-color:rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   width: 350px;
   text-align: center;
   position: relative;
   z-index: 1;
-  postion:realtive;
-  left:3%;
 `;
 
 const Header = styled.div`
@@ -106,6 +104,7 @@ const Header = styled.div`
   height: 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
+  
 `;
 
 const Icon = styled.div`
